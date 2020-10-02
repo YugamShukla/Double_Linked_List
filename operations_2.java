@@ -67,7 +67,7 @@ public class DoubleLinkedList {
             tail = temp;
         }
 
-        if (head.value <= value)// at the begining
+        if (head.value >= value)// at the begining
         {
             temp.next = head;
             head.prev = temp;
@@ -75,7 +75,7 @@ public class DoubleLinkedList {
             System.out.println("\n Node is inserted at the beginning");
         }
 
-        while (curr.next != null && curr.next.value > value)// treversal
+        while (curr.next != null && curr.next.value < value)// treversal
         {
             curr = curr.next;
         }
@@ -132,12 +132,13 @@ public class DoubleLinkedList {
         dll1.addTail(400);
         dll1.addTail(500);
         dll1.print();
+        dll1.sortedInsert(10);
+        dll1.print();
         dll1.sortedInsert(350);
         dll1.print();
         dll1.sortedInsert(550);
         dll1.print();
-        dll1.reverseList();;
-        dll1.print();
-       
+        dll1.reverseList();
+        dll1.print();      
     }
 }
